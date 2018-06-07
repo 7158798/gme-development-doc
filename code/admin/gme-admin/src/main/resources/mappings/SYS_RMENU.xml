@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.manage.sys.dao.Sys_rmenu_DAO">
+
+	<!-- 实体和表的映射关系 -->
+	<resultMap type="Sys_rmenu" id="responseMap">
+		<result property="id" column="ID"/>
+		<result property="role_id" column="ROLE_ID"/>
+		<result property="menu_id" column="MENU_ID"/>
+	</resultMap>
+	<!-- 获取分页数据 -->
+	<select id="selectPage" parameterType="java.util.Map" resultMap="responseMap">
+		SELECT * FROM SYS_RMENU 
+		WHERE 1=1 
+		LIMIT
+		<if test="PSIZE==null">10</if><if test="PSIZE!=null">#{PSIZE}</if>
+		OFFSET
+		<if test="BEGIN==null">0</if><if test="BEGIN!=null">#{BEGIN}</if>
+	</select>
+	<!-- 获取分页数据总条数 -->
+	<select id="selectPageCount" resultType="int" parameterType="java.util.Map">
+		SELECT COUNT(1) FROM SYS_RMENU
+		WHERE 1=1 
+	</select>
+	<!-- 添加单条记录 -->
+	<insert id="add" parameterType="SYS_RMENU" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO SYS_RMENU(ROLE_ID,MENU_ID) VALUES(#{role_id},#{menu_id})
+	</insert>
+	<!-- 获取单条记录 -->
+	<select id="getById" parameterType="int" resultMap="responseMap">
+		SELECT * FROM SYS_RMENU WHERE 
+		ID=#{id} 
+	</select>
+	<!-- 更新单条记录 -->
+	<update id="update" parameterType="SYS_RMENU">
+		UPDATE SYS_RMENU
+		<set>
+				<if test="role_id!=null">
+					ROLE_ID=#{role_id},
+				</if>
+				<if test="menu_id!=null">
+					MENU_ID=#{menu_id}
+				</if>
+		</set>
+		WHERE  
+		ID=#{id} 
+	</update>
+	<!-- 删除记录 -->
+	<delete id="deleteData" parameterType="java.util.Map">
+		DELETE FROM SYS_RMENU WHERE 1=1 
+		<if test="id!=null">
+			AND ID=#{id}
+		</if>
+		<if test="role_id!=null">
+			AND ROLE_ID=#{role_id}
+		</if>
+		<if test="menu_id!=null">
+			AND MENU_ID=#{menu_id}
+		</if>
+	</delete>
+	<!-- 获取所有数据 -->
+	<select id="selectAll" parameterType="java.util.Map" resultMap="responseMap">
+		SELECT * FROM SYS_RMENU WHERE 1=1 
+	</select>
+</mapper>

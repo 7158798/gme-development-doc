@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.manage.bus.dao.GCurrencyDAO">
+
+	<!-- 实体和表的映射关系 -->
+	<resultMap type="GCurrency" id="responseMap">
+		<result property="currency_id" column="currency_id"/>
+		<result property="currency_sn" column="currency_sn"/>
+		<result property="currency_symbol" column="currency_symbol"/>
+		<result property="currency_desc" column="currency_desc"/>
+		<result property="icon_id" column="icon_id"/>
+		<result property="name_cn" column="name_cn"/>
+		<result property="name_en" column="name_en"/>
+		<result property="enable_time" column="enable_time"/>
+		<result property="is_token" column="is_token"/>
+		<result property="operator_uid" column="operator_uid"/>
+		<result property="operator_name" column="operator_name"/>
+		<result property="currency_config_id" column="currency_config_id"/>
+		<result property="is_open" column="is_open"/>
+		<result property="is_enable" column="is_enable"/>
+		<result property="supply" column="supply"/>
+		<result property="circulation" column="circulation"/>
+		<result property="remark" column="remark"/>
+		<result property="version" column="version"/>
+		<result property="create_time" column="create_time"/>
+		<result property="updated_time" column="updated_time"/>
+	</resultMap>
+	<!-- 获取分页数据 -->
+	<select id="selectPage" parameterType="java.util.Map" resultMap="responseMap">
+		SELECT * FROM g_currency 
+		WHERE 1=1 
+		LIMIT
+		<if test="PSIZE==null">10</if><if test="PSIZE!=null">#{PSIZE}</if>
+		offset
+		<if test="BEGIN==null">0</if><if test="BEGIN!=null">#{BEGIN}</if>
+	</select>
+	<!-- 获取分页数据总条数 -->
+	<select id="selectPageCount" resultType="int" parameterType="java.util.Map">
+		SELECT COUNT(1) FROM g_currency
+		WHERE 1=1 
+	</select>
+	<!-- 添加单条记录 -->
+	<insert id="add" parameterType="GCurrency" useGeneratedKeys="true" keyProperty="currency_id">
+		insert into g_currency(currency_sn,currency_symbol,currency_desc,icon_id,name_cn,name_en,enable_time,is_token,operator_uid,operator_name,currency_config_id,is_open,is_enable,supply,circulation,remark,version,create_time,updated_time) values(#{currency_sn},#{currency_symbol},#{currency_desc},#{icon_id},#{name_cn},#{name_en},#{enable_time},#{is_token},#{operator_uid},#{operator_name},#{currency_config_id},#{is_open},#{is_enable},#{supply},#{circulation},#{remark},#{version},#{create_time},#{updated_time})
+	</insert>
+	<!-- 获取单条记录 -->
+	<select id="getById" parameterType="long" resultMap="responseMap">
+		SELECT * FROM g_currency WHERE 
+		currency_id=#{currency_id} 
+	</select>
+	<!-- 更新单条记录 -->
+	<update id="update" parameterType="GCurrency">
+		update g_currency
+		<set>
+				<if test="currency_sn!=null">
+					currency_sn=#{currency_sn},
+				</if>
+				<if test="currency_symbol!=null">
+					currency_symbol=#{currency_symbol},
+				</if>
+				<if test="currency_desc!=null">
+					currency_desc=#{currency_desc},
+				</if>
+				<if test="icon_id!=null">
+					icon_id=#{icon_id},
+				</if>
+				<if test="name_cn!=null">
+					name_cn=#{name_cn},
+				</if>
+				<if test="name_en!=null">
+					name_en=#{name_en},
+				</if>
+				<if test="enable_time!=null">
+					enable_time=#{enable_time},
+				</if>
+				<if test="is_token!=null">
+					is_token=#{is_token},
+				</if>
+				<if test="operator_uid!=null">
+					operator_uid=#{operator_uid},
+				</if>
+				<if test="operator_name!=null">
+					operator_name=#{operator_name},
+				</if>
+				<if test="currency_config_id!=null">
+					currency_config_id=#{currency_config_id},
+				</if>
+				<if test="is_open!=null">
+					is_open=#{is_open},
+				</if>
+				<if test="is_enable!=null">
+					is_enable=#{is_enable},
+				</if>
+				<if test="supply!=null">
+					supply=#{supply},
+				</if>
+				<if test="circulation!=null">
+					circulation=#{circulation},
+				</if>
+				<if test="remark!=null">
+					remark=#{remark},
+				</if>
+				<if test="version!=null">
+					version=#{version},
+				</if>
+				<if test="create_time!=null">
+					create_time=#{create_time},
+				</if>
+				<if test="updated_time!=null">
+					updated_time=#{updated_time}
+				</if>
+		</set>
+		where  
+		currency_id=#{currency_id} 
+	</update>
+	<!-- 删除单条记录 -->
+	<delete id="deleteById" parameterType="long">
+		delete from g_currency where 
+		currency_id=#{currency_id} 
+	</delete>
+	<!-- 获取所有数据 -->
+	<select id="selectAll" parameterType="java.util.Map" resultMap="responseMap">
+		SELECT * FROM g_currency where 1=1 
+	</select>
+</mapper>
