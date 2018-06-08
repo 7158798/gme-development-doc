@@ -12,6 +12,7 @@ import com.manage.bus.entity.GCurrency;
 @MyBatisDao
 @Component("GCurrencyDAO")
 public interface GCurrencyDAO{
+	
 	/**
 	 * 获取分页数据
 	 */

@@ -10,6 +10,8 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -106,8 +108,9 @@ public class GCurrencyController{
      */
     @RequiresPermissions("bus:g_currency:update")
     @RequestMapping(value = "toUpdate")
-    public String toUpdate(HttpServletRequest request, HttpServletResponse response, Model model, java.lang.String currency_id) throws Exception {
-        model.addAttribute("item", g_currency_service.get(currency_id));
+    public String toUpdate(HttpServletRequest request, HttpServletResponse response, Model model, @RequestParam(name="id") java.lang.String currency_id) throws Exception {
+    	GCurrency currency = g_currency_service.get(currency_id);
+        model.addAttribute("item", currency);
         return "modules/bus/g_currencyUpdate";
     }
 
@@ -167,7 +170,7 @@ public class GCurrencyController{
      */
     @RequiresPermissions("bus:g_currency:view")
     @RequestMapping(value = "info")
-    public String info(HttpServletRequest request, HttpServletResponse response, Model model, java.lang.String currency_id) throws Exception {
+    public String info(HttpServletRequest request, HttpServletResponse response, Model model,@RequestParam(name="id") java.lang.String currency_id) throws Exception {
         model.addAttribute("item", g_currency_service.get(currency_id));
         return "modules/bus/g_currencyInfo";
     }

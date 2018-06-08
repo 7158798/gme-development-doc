@@ -3,8 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>币种表（g_currency）
-功能描述：存储币种信息。列表</title>
+	<title>币种表</title>
 	<%@ include file="/WEB-INF/views/include/head.jsp"%>
 	<script type="text/javascript">
 	  	$(function() {
@@ -156,13 +155,13 @@
                         var a = '';var b = '';var c = '';
                         var div = '<div class="dropdown-table" data-row="'+index+'"><a class="dropdown-toggle" href="javascript:;"><i class="fa fa-gear"></i></a>';
 						<shiro:hasPermission name="bus:g_currency:view">
-							a = '<li><a href="javaScript:void(0);" onclick="detail(\'详情\',\'${ctx}/bus/g_currency/info?id='+row.id+'\',null,null)"><i class="fa fa-info-circle"></i>详情</a></li>';
+							a = '<li><a href="javaScript:void(0);" onclick="detail(\'详情\',\'${ctx}/bus/g_currency/info?id='+row.currency_id+'\',null,null)"><i class="fa fa-info-circle"></i>详情</a></li>';
 						</shiro:hasPermission>
 						<shiro:hasPermission name="bus:g_currency:update">
-							b = '<li><a href="javaScript:void(0);" onclick="update(\'修改\',\'${ctx}/bus/g_currency/toUpdate?id='+row.id+'\',\'dataGrid\',null,null);"><i class="fa fa-edit"></i>修改</a></li>';
+							b = '<li><a href="javaScript:void(0);" onclick="update(\'修改\',\'${ctx}/bus/g_currency/toUpdate?id='+row.currency_id+'\',\'dataGrid\',null,null);"><i class="fa fa-edit"></i>修改</a></li>';
 						</shiro:hasPermission>
 						<shiro:hasPermission name="bus:g_currency:delete">
-							c = '<li><a href="javaScript:void(0);" onclick="deleterow('+row.id+')"><i class="fa fa-trash-o"></i>删除</a></li>';
+							c = '<li><a href="javaScript:void(0);" onclick="deleterow('+row.currency_id+')"><i class="fa fa-trash-o"></i>删除</a></li>';
 						</shiro:hasPermission>
                         div = '<div class="dropdown-table" data-row="'+index+'"><a class="dropdown-toggle" href="javascript:;"><i class="fa fa-gear"></i></a><ul class="u-menu">' + a + b + c + '</ul></div>';
             			return div;
@@ -204,8 +203,7 @@
 	  	<table id="dataGrid"></table>
 		<div id="toolDiv" style="padding:2px 5px;">
 			<div class="psflow-panpel-maintitle">
-				<h2 class="psflow-panpel-title"><span>币种表（g_currency）
-功能描述：存储币种信息。管理</span></h2>
+				<h2 class="psflow-panpel-title"><span>币种表</span></h2>
 			</div>
 			<div class="psflow-panpel-tooldiv">
 				<div class="tooldiv" id="toolDivNew">

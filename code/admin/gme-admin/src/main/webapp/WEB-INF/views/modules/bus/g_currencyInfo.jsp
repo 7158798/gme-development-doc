@@ -3,14 +3,13 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>币种表（g_currency）
-功能描述：存储币种信息。详情</title>
+    <title>币种表</title>
     <%@ include file="/WEB-INF/views/include/head.jsp"%>  
   </head>
   <body>
   	<div class="form-horizontal">
   		<div class="control-group">
-        	<label class="control-label Validform_label">顺序号，递增：</label>
+        	<label class="control-label Validform_label">顺序号：</label>
 	        <div class="controls">
 	        	<input disabled="disabled" value="${item.currency_sn}" class="inputxt" type="text">
 	        </div>

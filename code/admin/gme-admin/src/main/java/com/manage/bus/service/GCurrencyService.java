@@ -25,7 +25,6 @@ public class GCurrencyService{
     @Resource(name = "GCurrencyDAO")
     private GCurrencyDAO g_currency_dao;
 
-
     /**
      * 分页查询
      */

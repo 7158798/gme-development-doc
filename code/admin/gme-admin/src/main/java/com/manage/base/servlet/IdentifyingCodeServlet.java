@@ -24,6 +24,7 @@ import com.sun.image.codec.jpeg.JPEGImageEncoder;
  * 验证码处理
  *
  */
+@SuppressWarnings("restriction")
 public class IdentifyingCodeServlet extends HttpServlet{
 	
 	private static final long serialVersionUID = -8765642283107293966L;

@@ -24,7 +24,7 @@ public class GCurrency implements Serializable{
 	/**启用日期*/	
 	private java.sql.Timestamp enable_time;
 	/**是否是媒介币0-不是;1-是;*/	
-	private java.lang.Boolean is_token;
+	private java.lang.Integer is_token;
 	/**操作者编号*/	
 	private java.lang.String operator_uid;
 	/**操作者*/	
@@ -34,7 +34,7 @@ public class GCurrency implements Serializable{
 	/**充值/提现(0000四位)：00-前两位表示是否充值;00-后两位表示是否提现;其中01表示是;02表示否;*/	
 	private java.lang.Integer is_open;
 	/**1-启用(默认);2-冻结;*/	
-	private java.lang.Boolean is_enable;
+	private java.lang.Integer is_enable;
 	/**发行量*/	
 	private java.math.BigDecimal supply;
 	/**流通总量*/	
@@ -96,12 +96,6 @@ public class GCurrency implements Serializable{
 	public java.sql.Timestamp getEnable_time(){
 		return this.enable_time;
 	}
-	public void setIs_token(java.lang.Boolean is_token){
-		this.is_token=is_token;
-	}
-	public java.lang.Boolean getIs_token(){
-		return this.is_token;
-	}
 	public void setOperator_uid(java.lang.String operator_uid){
 		this.operator_uid=operator_uid;
 	}
@@ -125,12 +119,6 @@ public class GCurrency implements Serializable{
 	}
 	public java.lang.Integer getIs_open(){
 		return this.is_open;
-	}
-	public void setIs_enable(java.lang.Boolean is_enable){
-		this.is_enable=is_enable;
-	}
-	public java.lang.Boolean getIs_enable(){
-		return this.is_enable;
 	}
 	public void setSupply(java.math.BigDecimal supply){
 		this.supply=supply;
@@ -168,4 +156,33 @@ public class GCurrency implements Serializable{
 	public java.sql.Timestamp getUpdated_time(){
 		return this.updated_time;
 	}
+	/**  
+	 * 获取is_token  
+	 * @return is_token is_token  
+	 */
+	public java.lang.Integer getIs_token() {
+		return is_token;
+	}
+	/**  
+	 * 设置is_token  
+	 * @param is_token is_token  
+	 */
+	public void setIs_token(java.lang.Integer is_token) {
+		this.is_token = is_token;
+	}
+	/**  
+	 * 获取is_enable  
+	 * @return is_enable is_enable  
+	 */
+	public java.lang.Integer getIs_enable() {
+		return is_enable;
+	}
+	/**  
+	 * 设置is_enable  
+	 * @param is_enable is_enable  
+	 */
+	public void setIs_enable(java.lang.Integer is_enable) {
+		this.is_enable = is_enable;
+	}
+	
 }

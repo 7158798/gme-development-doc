@@ -118,6 +118,7 @@
 		delete from g_currency where 
 		currency_id=#{currency_id} 
 	</delete>
+	
 	<!-- 获取所有数据 -->
 	<select id="selectAll" parameterType="java.util.Map" resultMap="responseMap">
 		SELECT * FROM g_currency where 1=1 

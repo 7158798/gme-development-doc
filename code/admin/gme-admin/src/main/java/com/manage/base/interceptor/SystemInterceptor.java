@@ -8,7 +8,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * 系统拦截�?
+ * 系统拦截
  */
 public class SystemInterceptor implements HandlerInterceptor{
 
@@ -30,7 +30,7 @@ public class SystemInterceptor implements HandlerInterceptor{
 		}
 		if(SecurityUtils.getSubject()==null || SecurityUtils.getSubject().getPrincipal()==null){
 			if (request.getHeader("x-requested-with") != null&& request.getHeader("x-requested-with").equalsIgnoreCase("XMLHttpRequest")){
-				response.setHeader("sessionstatus", "timeout");//在响应头设置session状�??    
+				response.setHeader("sessionstatus", "timeout");//在响应头设置session状
 				response.getWriter().print("timeout"); 
 			}
 		}
