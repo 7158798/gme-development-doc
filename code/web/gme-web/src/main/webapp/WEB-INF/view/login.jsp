@@ -461,6 +461,13 @@
 			}
 		</style>
 		<script src="js/autoemail.js"></script>
+		
+		
+		<isLogin>
+			<li class="toplogin"><a href="/login">注册&nbsp;</a>|&nbsp; </li>
+	        <li class="toplogin" id="toplogin"><a href="/login">登录</a></li>
+		</isLogin>
+		
 
 		<div class="left_con_login">
 			<div class="login_incontent login-con">

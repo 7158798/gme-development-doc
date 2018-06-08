@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: opsigte
-  Date: 2018/6/1
-  Time: 17:16
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -45,7 +38,8 @@
                         </div>
                     </a>
                 </li>
-
+                
+	<sitemesh:write property='isLogin'/>
 
                 <li class="lang-option">
                     <span>中文版</span><i class="caret"></i>
@@ -60,6 +54,9 @@
                 <li id="dark" title="深色">深色</li>
                 <li id="light" title="浅色">浅色</li>
             </ul>
+            
+            
+            
         </div>
     </div>
     <div class="top-dn">

@@ -28,6 +28,12 @@
     
 <div id="full-screen-slider">
 
+
+		<isLogin>
+			<li class="toplogin"><a href="/login">注册&nbsp;</a>|&nbsp; </li>
+	        <li class="toplogin" id="toplogin"><a href="/login">登录</a></li>
+		</isLogin>
+
     <div id="bannerProgress"><div id="innerProg"></div></div>
     <div class="l-box-con">
 

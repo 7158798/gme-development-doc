@@ -63,8 +63,9 @@
                         </div>
                     </a>
                 </li>
-                                        <li class="toplogin"><a href="/login">注册&nbsp;</a>|&nbsp; </li>
-                        <li class="toplogin" id="toplogin"><a href="/login">登录</a></li>
+                        
+                 <li class="toplogin"><a href="/login">注册&nbsp;</a>|&nbsp; </li>
+                 <li class="toplogin" id="toplogin"><a href="/login">登录</a></li>
                     
                                 <li class="lang-option">
                     <span>中文版</span><i class="caret"></i>
