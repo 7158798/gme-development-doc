@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sys>
+	<sysconfig>
+		<!-- 每页显示的条数 -->
+		<QrCodeUploadPath>http://localhost:8080/bijiuManger/</QrCodeUploadPath>
+		
+		<!-- 每页显示的条数 -->
+		<pageNumber>30</pageNumber>
+		<!-- 每批次操作的数量 -->
+		<batchNumber>500</batchNumber>
+		<!-- 是否加载缓存 1是 0否-->
+		<isCache>0</isCache>
+		<!-- 资金密码混淆字段 -->
+		<moneyPwd>@~@.xyb12!</moneyPwd>
+		<!-- 登录密码混淆字段 -->
+		<loginPwd>!@#xyb381^%</loginPwd>
+		<!-- 扣费机制 -->
+		<orderType>2</orderType>
+		<!-- 手续费 -->
+		<feeMoney>0.2</feeMoney>
+		<!-- 显示条数 -->
+		<showCount>10</showCount>
+		<!-- 最低充值金额 -->
+		<minMoney>10</minMoney>
+		<!-- 最高充值金额 -->
+		<maxMoney>10000</maxMoney>
+		<!-- redis  key的超时时间 -->
+		<redisTimeOut>5</redisTimeOut>
+		<!-- 长度基数个数 -->
+		<widthCount>100</widthCount>
+		<!-- 首页显示条数 -->
+		<indexShowCount>50</indexShowCount>
+		<!-- 交易页面显示 -->
+		<tradeShowCount>7</tradeShowCount>
+		<!-- 市场页面显示条数 -->
+		<marketShowCount>20</marketShowCount>
+		<!-- 集市订单手续费   买家-->
+		<orderDeposit>0.05</orderDeposit>
+		<!-- 集市订单手续费   卖家-->
+		<sellOrderDeposit>0.1</sellOrderDeposit>
+		<!-- coinInfo超时时间 单位(秒)-->
+		<coinInfoTimeOut>300</coinInfoTimeOut>
+		<!-- 点对点交易浮动价格浮动比例 -->
+		<floatBi>0.05</floatBi>
+		<!-- 转币混淆 -->
+		<coinPut>!@#coin33^%</coinPut>
+		<!-- 转币混淆 -->
+		<usdt>6.52</usdt>
+		<!--下面这条已经不用-->
+		<marketOpens>21</marketOpens>
+		<mangerPath>http://localhost:8080</mangerPath>
+		<userCenterAPI>http://210.209.75.14:7112/</userCenterAPI>
+		
+		<!-- 身份认证后赠送GPC数量 -->
+		<auth_gpcnum>500</auth_gpcnum>
+		<!-- 身份认证后推送人赠送GPC数量 -->
+		<ref_gpcnum>300</ref_gpcnum>
+		
+	</sysconfig>
+	
+	<!-- redis缓存服务器配置 -->
+	<redis>
+	    <redisName>client</redisName>
+		<!-- redis服务器地址 -->
+		<redisIp>210.209.75.14</redisIp>
+		<!-- redis服务端口 -->
+		<port>9119</port>
+		<!-- timeout 超时时间：单位ms-->
+		<timeout>15000</timeout>
+		<!-- password 密码 -->
+		<password>Dc@xzUbd#adx008aSK99</password>
+			<pool>
+			<!-- 最大允许空闲连接数 -->
+			<maxIdle>64</maxIdle>
+			<!-- 最大分配的对象数 -->
+			<maxTotal>1000</maxTotal>
+			<!-- 最小允许空闲连接数 -->
+			<minIdle>16</minIdle>
+			<!-- 最大等待时间  单位ms-->
+			<maxWaitMillis>30000</maxWaitMillis>
+			<!--使用连接时，检测连接是否成功  -->
+			<testOnBorrow>true</testOnBorrow>
+			<!-- 返回连接时，检测连接是否成功 -->
+			<testOnReturn>true</testOnReturn>
+			<testWhileIdle>true</testWhileIdle>
+		</pool>
+	</redis>
+	
+</sys>

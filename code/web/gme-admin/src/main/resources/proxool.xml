@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxool-config>
+	<proxool>
+		<alias>db</alias>
+		<driver-url>jdbc:mysql://47.106.171.23:3306/gme_db?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true</driver-url>
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<driver-properties>    
+			<property name="user" value="yyctdbuser" />
+			<property name="password" value="Ab1234567." />
+		</driver-properties> 
+		<house-keeping-sleep-time>60000</house-keeping-sleep-time>
+		<maximum-connection-count>100</maximum-connection-count>
+		<minimum-connection-count>5</minimum-connection-count>
+		<prototype-count>10</prototype-count>
+		<simultaneous-build-throttle>10</simultaneous-build-throttle>
+		<house-keeping-test-sql>SELECT 1</house-keeping-test-sql>
+		<statistics>10m,1d</statistics>
+		<statistics-log-level>INFO</statistics-log-level>
+		
+		
+		
+	</proxool>
+</proxool-config> 
+
+
